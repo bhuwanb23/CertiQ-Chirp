@@ -1,5 +1,7 @@
 # The Atomiq Hackathon — End-to-End Analysis
 
+> **Phase 0 lock — 2026-11-11 · IST:** The source hierarchy, event metadata, and contradiction register below are authoritative for this project. End-to-end execution evidence: [`docs/plan/phase_0_completion.md`](../docs/plan/phase_0_completion.md).
+
 **Event:** The Atomiq Hackathon | Qiskit Fall Fest 2026 at IEM  
 **Theme:** *Chi(r)ps: A Decade of Harmony on the Cloud*  
 **Audit time:** 11 November 2026, about 14:03 UTC / 19:33 IST  

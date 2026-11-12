@@ -1,5 +1,7 @@
 # Technical Challenge Specification (extracted text)
 
+> **Phase 0 lock — 2026-11-11 · IST:** This normalized specification is the authoritative challenge interpretation for Stages 1–3, deliverables, reproducibility, and the 35/30/20/15 rubric. End-to-end execution evidence: [`docs/plan/phase_0_completion.md`](../docs/plan/phase_0_completion.md).
+
 Source: `PROBLEM_STATEMENT_THE_ATOMIQ_HACKTHON.pdf` in the official [Google Drive resource folder](https://drive.google.com/drive/folders/1vjIM7mD7XjUjvfotAXF4uVfE2cYTS7Sp?usp=sharing). Extracted from the four-page PDF. Formatting normalized to Markdown.
 
 ---

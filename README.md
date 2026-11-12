@@ -14,6 +14,15 @@ This is the lean development source of truth. Presentation media, PDF dossiers, 
 - Framework: **Qiskit 2.6.2 / Qiskit Aer 0.18.2**, statevector and Aer simulation only
 - No unsupported quantum-advantage claim is made.
 
+## Project charter
+
+**Pitch:** “CertiQ-Chirp turns quantum components into an auditable banking decision: calibrated predictions, certified QAOA selection, and a six-qubit conversion check.” *(157 characters)*  
+**Domains:** **Fintech** primary · **AI/ML + Quantum ML/Optimization** secondary.  
+**Final answers:** six customer IDs and `Pr(K ≥ 3)`.  
+**Source priority:** problem PDF + workbook > Devpost Rules > Devpost Overview > official QFF site > registration form.  
+**Rubric:** Quantum Rigor **35** / Accuracy & Integration **30** / Reproducibility **20** / Communication **15**.  
+**Validation policy:** hidden-label evaluation, exact classical references, training-only preprocessing and calibration, one final test prediction, and no unsupported quantum-advantage claim.
+
 ## Repository layout
 
 | Path | Purpose |
@@ -28,9 +37,14 @@ This is the lean development source of truth. Presentation media, PDF dossiers, 
 | `data/raw/` | Original participant workbook |
 | `data/reference/` | Official problem-statement PDF |
 | `docs/` | Hackathon analysis, technical spec, technical report, generated benchmark README |
+| `docs/plan/` | Master plan, seven phase files, Phase 0–6 completion records, tracker, status file, and plan README |
 | `results/` | Stage 1/2/3 CSV + JSON deliverables, 30-metric table, full summary, benchmark report |
 | `src/run_benchmark.py` | End-to-end benchmark and exact-reference generator |
 | `src/make_report.py` | Human-readable report generator from result files |
+
+## Project plan
+
+The tracking layer lives in [`docs/plan/plan.md`](docs/plan/plan.md): one master plan containing all **7 main phases** and **44 sub-phases**, exact goals, validation gates, evidence paths, dependencies, and change control. **Phases 0–6 are ✅ Completed** end to end; their single-agent execution records are [`docs/plan/phase_0_completion.md`](docs/plan/phase_0_completion.md), [`docs/plan/phase_1_completion.md`](docs/plan/phase_1_completion.md), [`docs/plan/phase_2_completion.md`](docs/plan/phase_2_completion.md), [`docs/plan/phase_3_completion.md`](docs/plan/phase_3_completion.md), [`docs/plan/phase_4_completion.md`](docs/plan/phase_4_completion.md), [`docs/plan/phase_5_completion.md`](docs/plan/phase_5_completion.md), and [`docs/plan/phase_6_completion.md`](docs/plan/phase_6_completion.md). All seven phase gates remain **✅ Verified**. Each `phase_N.md` is a standalone work package for splitting work; `TRACKER.csv` and `status.json` keep progress machine-readable.
 
 ## Reproduce
 

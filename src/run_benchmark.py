@@ -686,6 +686,7 @@ def main():
     qaoa = qaoa_stage2(top10, exact_obj, list(exact_ids))
     stage2["qaoa"] = qaoa
     stage2["certified_hybrid_selected_ids"] = list(exact_ids)
+    stage2["devpost_form_selected_ids"] = ", ".join(stage2["selected_6_customer_ids"])
     (OUT / "stage2_selection.json").write_text(json.dumps(native(stage2), indent=2))
 
     # Stage 3.
@@ -695,6 +696,12 @@ def main():
     stage3 = stage3_circuit(ps)
     stage3["selected_customer_ids"] = selected_ids
     stage3["customer_to_qubit_mapping"] = {cid: f"q{i}" for i, cid in enumerate(selected_ids)}
+    stage3["quantum_estimated_probability"] = stage3["noiseless_finite_shot_probability"]
+    stage3["devpost_form_value"] = round(stage3["noiseless_finite_shot_probability"], 2)
+    stage3["form_probability_basis"] = (
+        "Qiskit Aer noiseless finite-shot estimate; exact analytical reference is "
+        f"{stage3['exact_analytical_probability']}."
+    )
     (OUT / "stage3_simulation.json").write_text(json.dumps(native(stage3), indent=2))
 
     # Business and reproducibility values.
@@ -736,6 +743,11 @@ def main():
     }
     reproducibility_score = 100.0 * sum(checks.values()) / len(checks)
 
+    # Submission-facing fields live in the stage JSON files; the canonical summary
+    # keeps the analytical / benchmark view used by make_report.py.
+    stage2_summary = {k: v for k, v in stage2.items() if k != "devpost_form_selected_ids"}
+    stage3_summary = {k: v for k, v in stage3.items()
+                      if k not in {"quantum_estimated_probability", "devpost_form_value", "form_probability_basis"}}
     summary = {
         "idea": "CertiQ-Chirp: quantum-calibrated ranker fusion + certified QAOA + noise-aware six-qubit Bernoulli ledger",
         "winner_model": winner,
@@ -766,8 +778,8 @@ def main():
             "probability_max": float(final_p.max()),
             "probability_mean": float(final_p.mean()),
         },
-        "stage2": stage2,
-        "stage3": stage3,
+        "stage2": stage2_summary,
+        "stage3": stage3_summary,
         "business": {
             "expected_net_value": expected_net,
             "expected_conversions": expected_conversions,
