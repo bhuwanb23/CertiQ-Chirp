@@ -1,4 +1,4 @@
-# Generated delivery artifacts are external handoffs, not repo sources.
+# External delivery artifacts; keep only the original problem statement in-repo.
 *.zip
 *.png
 *.svg
@@ -14,9 +14,18 @@ CertiQ-Chirp_Organized_Project.zip
 CertiQ-Chirp_PDF_Submission_Package.zip
 atomiq_submission_upload.zip
 
-# Python caches and environments
+# Python environments, caches, build output, and editable-install metadata.
 __pycache__/
 *.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
 .venv/
 venv/
 .env
+.env.*

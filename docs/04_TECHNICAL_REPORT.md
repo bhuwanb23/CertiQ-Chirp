@@ -35,7 +35,7 @@ The winning design is not “use a quantum model everywhere.” The benchmark sh
 |---|---:|---|
 | Quantum Rigor & Technical Depth | 35% | Real Qiskit quantum kernel, 10-qubit QAOA, six-qubit circuit, transpilation/gate/noise reporting, classical baselines |
 | Result Accuracy & Integration | 30% | Same continuous probabilities in all stages; exact Stage 2 certificate; exact Stage 3 Poisson-binomial; error propagation |
-| Code Quality & Reproducibility | 20% | One runnable script, pinned versions, seed manifest, root-level result files, full measurement counts, license |
+| Code Quality & Reproducibility | 20% | Modular runnable package, pinned versions, seed manifest, root-level result files, full measurement counts, license |
 | Report & Communication | 15% | Clear quantum/classical boundary, honest raw QAOA gap, business interpretation, limitations |
 
 ### 90-second judge pitch
@@ -172,9 +172,13 @@ This is a planning estimate, not a prediction of the judge’s score.
 
 ```text
 CertiQ-Chirp repository/
-  src/run_benchmark.py         # end-to-end Qiskit + sklearn benchmark
-  src/make_report.py           # regenerates this report
-  requirements.txt             # pinned package versions
+  pyproject.toml               # package metadata, CLI entry points, pytest config
+  requirements.txt             # pinned runtime dependencies
+  requirements-dev.txt         # runtime + pinned test dependency
+  src/run_benchmark.py         # compatibility benchmark CLI
+  src/make_report.py           # compatibility report CLI
+  src/certiq_chirp/            # modular benchmark package
+  tests/                       # automated data, circuit, and parity tests
   seeds.json                   # all random seeds
   LICENSE                      # MIT
   README.md                    # repository map and run instructions
@@ -195,7 +199,7 @@ End-to-end benchmark runtime: **145.9735 s**. Reproducibility checks: **100%**.
 Run:
 
 ```bash
-cd /home/user/atomiq_analysis
+# From the repository root
 python src/run_benchmark.py
 python src/make_report.py
 ```

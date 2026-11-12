@@ -5,7 +5,8 @@
 
 **Phase work packages:** [phase_0.md](phase_0.md) · [phase_1.md](phase_1.md) · [phase_2.md](phase_2.md) · [phase_3.md](phase_3.md) · [phase_4.md](phase_4.md) · [phase_5.md](phase_5.md) · [phase_6.md](phase_6.md)
 
-**Tracking:** [TRACKER.csv](TRACKER.csv) — one row per sub-phase; [status.json](status.json) — machine-readable phase status.
+**Tracking:** [TRACKER.csv](TRACKER.csv) — one row per sub-phase; [status.json](status.json) — machine-readable phase status.  
+**Post-plan publication hardening:** [github_readiness_addendum.md](github_readiness_addendum.md) — modular package, automated tests, GitHub setup, and clean-clone verification; this is an addendum, not a new numbered phase.
 
 | Phase | File | Title | Sub-phases | Status |
 |---:|---|---|---:|---|
@@ -17,4 +18,4 @@
 | 5 | `phase_5.md` | End-to-end integration, 30-metric benchmark & validation | 7 | ✅ Completed |
 | 6 | `phase_6.md` | Technical communication, evidence pack & submission handoff | 6 | ✅ Completed |
 
-All seven phases (Phases 0–6) and all 44 sub-phases are **✅ Completed** and **✅ Verified**. The plan layer contains 18 self-indexed files. `plan.md` also contains the full sub-phase checklist, global gates, change control, and a technical reference digest. `phase_0.md` doubles as the project-control handoff: it repeats every main phase, every sub-phase, the goals and validation details, the split-work map, and the exact reference data. Each phase file is standalone: it restates its goal, sub-phases, validation details, evidence, risks, and split-work guidance, then links back to the master plan.
+All seven phases (Phases 0–6) and all 44 sub-phases are **✅ Completed** and **✅ Verified**. The numbered Phase 0–6 plan layer contains 18 original files; this directory now contains 19 files including the separate GitHub-readiness addendum. `plan.md` also contains the full sub-phase checklist, global gates, change control, and a technical reference digest. `phase_0.md` doubles as the project-control handoff: it repeats every main phase, every sub-phase, the goals and validation details, the split-work map, and the exact reference data. Each phase file is standalone: it restates its goal, sub-phases, validation details, evidence, risks, and split-work guidance, then links back to the master plan.
