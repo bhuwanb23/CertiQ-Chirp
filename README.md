@@ -40,6 +40,7 @@ This is the lean development source of truth. Presentation media, PDF dossiers, 
 | `docs/plan/` | Master plan, seven phase files, Phase 0–6 completion records, tracker, status file, and plan README |
 | `results/` | Stage 1/2/3 CSV + JSON deliverables, 30-metric table, full summary, benchmark report |
 | `src/run_benchmark.py` | End-to-end benchmark and exact-reference generator |
+| `atomiq_analysis/` | Analysis workspace: source inputs, media gallery, PDF deliverables, submission bundles, winning prototype, docs, archives |
 | `src/make_report.py` | Human-readable report generator from result files |
 
 ## Project plan
