@@ -1,0 +1,14 @@
+{
+  "sampling": 42,
+  "split": 42,
+  "cv_repeats": [
+    42,
+    142,
+    242
+  ],
+  "meta_cv": 999,
+  "qaoa": 2026,
+  "simulator": 31415,
+  "monte_carlo": 27182,
+  "bootstrap": 1618
+}

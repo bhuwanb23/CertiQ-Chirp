@@ -1,0 +1,22 @@
+# Generated delivery artifacts are external handoffs, not repo sources.
+*.zip
+*.png
+*.svg
+*.pdf
+!data/reference/*.pdf
+media_gallery/
+CertiQ-Chirp-PDF/
+CertiQ-Chirp-Project/
+submission_bundle/
+winning_prototype/
+CertiQ-Chirp_Media_Gallery.zip
+CertiQ-Chirp_Organized_Project.zip
+CertiQ-Chirp_PDF_Submission_Package.zip
+atomiq_submission_upload.zip
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env

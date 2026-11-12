@@ -1,0 +1,206 @@
+{
+  "top_10_candidate_ids": [
+    "C0170",
+    "C0256",
+    "C0327",
+    "C0338",
+    "C0188",
+    "C0079",
+    "C0081",
+    "C0374",
+    "C0059",
+    "C0372"
+  ],
+  "candidate_inputs": [
+    {
+      "customer_id": "C0170",
+      "contact_cost": 1,
+      "expected_deposit_value": 22,
+      "capacity_units": 1,
+      "customer_segment": "C",
+      "predicted_probability": 0.4515878093151118,
+      "expected_net_value": 8.934931804932459
+    },
+    {
+      "customer_id": "C0256",
+      "contact_cost": 1,
+      "expected_deposit_value": 22,
+      "capacity_units": 4,
+      "customer_segment": "A",
+      "predicted_probability": 0.434955481805204,
+      "expected_net_value": 8.569020599714488
+    },
+    {
+      "customer_id": "C0327",
+      "contact_cost": 1,
+      "expected_deposit_value": 25,
+      "capacity_units": 4,
+      "customer_segment": "B",
+      "predicted_probability": 0.4181345682517588,
+      "expected_net_value": 9.453364206293971
+    },
+    {
+      "customer_id": "C0338",
+      "contact_cost": 2,
+      "expected_deposit_value": 18,
+      "capacity_units": 2,
+      "customer_segment": "A",
+      "predicted_probability": 0.37985359397188645,
+      "expected_net_value": 4.837364691493956
+    },
+    {
+      "customer_id": "C0188",
+      "contact_cost": 2,
+      "expected_deposit_value": 13,
+      "capacity_units": 2,
+      "customer_segment": "B",
+      "predicted_probability": 0.36119785923124526,
+      "expected_net_value": 2.695572170006188
+    },
+    {
+      "customer_id": "C0079",
+      "contact_cost": 3,
+      "expected_deposit_value": 24,
+      "capacity_units": 3,
+      "customer_segment": "A",
+      "predicted_probability": 0.346319801895272,
+      "expected_net_value": 5.311675245486528
+    },
+    {
+      "customer_id": "C0081",
+      "contact_cost": 4,
+      "expected_deposit_value": 17,
+      "capacity_units": 1,
+      "customer_segment": "C",
+      "predicted_probability": 0.33481137653883053,
+      "expected_net_value": 1.691793401160119
+    },
+    {
+      "customer_id": "C0374",
+      "contact_cost": 2,
+      "expected_deposit_value": 25,
+      "capacity_units": 1,
+      "customer_segment": "D",
+      "predicted_probability": 0.3304735885529978,
+      "expected_net_value": 6.261839713824944
+    },
+    {
+      "customer_id": "C0059",
+      "contact_cost": 3,
+      "expected_deposit_value": 27,
+      "capacity_units": 3,
+      "customer_segment": "C",
+      "predicted_probability": 0.3288014321669694,
+      "expected_net_value": 5.877638668508174
+    },
+    {
+      "customer_id": "C0372",
+      "contact_cost": 3,
+      "expected_deposit_value": 30,
+      "capacity_units": 3,
+      "customer_segment": "B",
+      "predicted_probability": 0.32302148252951446,
+      "expected_net_value": 6.690644475885433
+    }
+  ],
+  "selected_6_customer_ids": [
+    "C0059",
+    "C0170",
+    "C0256",
+    "C0327",
+    "C0372",
+    "C0374"
+  ],
+  "total_budget_used": 11.0,
+  "total_capacity_used": 16.0,
+  "objective_value": 45.78743946915947,
+  "classical_bruteforce_optimum": 45.78743946915947,
+  "absolute_optimality_gap": 0.0,
+  "relative_optimality_gap": 0.0,
+  "feasible_subset_count": 210,
+  "budget_utilization": 0.44,
+  "capacity_utilization": 0.7272727272727273,
+  "qaoa": {
+    "algorithm": "warm-start 2-layer QAOA + one-swap hybrid repair + exact brute-force certificate",
+    "logical_qubits": 10,
+    "layers": 2,
+    "optimized_parameters": [
+      4.534176093391363,
+      2.917850865756762,
+      12.566370614359172,
+      3.0344960985260063
+    ],
+    "optimizer_energy_normalized": 0.007951606205251618,
+    "shots": 8192,
+    "feasible_sample_rate": 0.681396484375,
+    "best_feasible_bitstring": "1100101110",
+    "best_feasible_probability": 0.0032537994112026274,
+    "best_feasible_measurement_count": 33,
+    "best_feasible_selected_ids": [
+      "C0256",
+      "C0327",
+      "C0338",
+      "C0079",
+      "C0059",
+      "C0372"
+    ],
+    "qaoa_best_feasible_objective": 40.73970788738256,
+    "qaoa_gap_to_exact": 5.047731581776915,
+    "qaoa_hit_exact_optimum": false,
+    "hybrid_repaired_bitstring": "1110000111",
+    "hybrid_repaired_selected_ids": [
+      "C0170",
+      "C0256",
+      "C0327",
+      "C0374",
+      "C0059",
+      "C0372"
+    ],
+    "hybrid_repaired_objective": 45.78743946915947,
+    "certified_hybrid_gap": 0.0,
+    "hybrid_hit_exact_optimum": true,
+    "exact_certificate_bitstring": "1110000111",
+    "penalty_coefficients": {
+      "exact_K": 500.0,
+      "budget": 500.0,
+      "capacity": 500.0
+    },
+    "logical_depth": 5,
+    "logical_ops": {
+      "rx": 20,
+      "ry": 10,
+      "diagonal": 2
+    },
+    "measurement_counts_top20": {
+      "1001100111": 43,
+      "0011111100": 42,
+      "1111000011": 42,
+      "0011011101": 41,
+      "0100011111": 40,
+      "1111001100": 40,
+      "0110110011": 37,
+      "1101100011": 37,
+      "0111110010": 36,
+      "1010110110": 36,
+      "1010111100": 36,
+      "1000011111": 35,
+      "1110010110": 35,
+      "0111010101": 34,
+      "0111110100": 34,
+      "1100010111": 34,
+      "1100011011": 34,
+      "1100101011": 34,
+      "1101110100": 34,
+      "1111001001": 34
+    }
+  },
+  "certified_hybrid_selected_ids": [
+    "C0059",
+    "C0170",
+    "C0256",
+    "C0327",
+    "C0372",
+    "C0374"
+  ],
+  "devpost_form_selected_ids": "C0059, C0170, C0256, C0327, C0372, C0374"
+}

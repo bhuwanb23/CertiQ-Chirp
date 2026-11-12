@@ -1,0 +1,31 @@
+metric,winning_idea,best_classical_baseline,quantum_only_baseline,unit,reference_or_target,why_it_matters
+Stage 1 ROC-AUC (OOF),0.606900269541779,0.6291105121293801,0.49919137466307273,score,higher; 0.5 = random,Global ranking quality
+Stage 1 PR-AUC (OOF),0.23471757068628676,0.22427803385763548,0.12264388117266026,score,higher; prevalence=0.117,"Minority-class ranking, a named judge metric"
+Stage 1 Brier score (OOF),0.1036441710589034,0.11635690947127046,0.10393886243329917,score,lower,"Probability calibration, a named judge metric"
+Stage 1 log loss (OOF),0.36093010631030753,0.4022557304844892,0.36391863520815265,nats,lower,Penalizes overconfident probabilities
+Stage 1 expected calibration error,0.03567140434552267,0.08766574388820682,0.034161184226422205,score,lower,Calibration reliability
+Stage 1 calibration slope,0.6123824799235827,0.3101817445901248,-0.15530313011805053,ratio,near 1,Whether probabilities are too extreme or too flat
+Stage 1 Precision@10% (OOF),0.3,0.23333333333333334,0.13333333333333333,score,higher,Proxy for hidden-test Precision@10
+Stage 1 Recall@10% (OOF),0.2571428571428571,0.2,0.11428571428571428,score,higher,Proxy for hidden-test Recall@10
+Stage 1 lift@10% (OOF),2.571428571428571,2.0,1.1428571428571428,×,higher; 1 = random,Business value of the top decile
+Stage 1 NDCG@10% (OOF),0.36278032868912385,0.29476975857714693,0.09845212737965606,score,higher,Ranking quality with position weighting
+Stage 1 PR-AUC bootstrap CI width,0.2068853780544636,not scored,not scored,score,narrower,Sampling stability of the minority-class metric
+Stage 1 CV PR-AUC std,0.01648040832314972,0.018430982797063546,0.009466225774401415,score,lower,Robustness to CV partition
+Stage 1 quantum feature-map qubits,4.0,N/A,4,qubits,4-qubit ZZFeatureMap,Real Qiskit quantum contribution
+Stage 1 feature-map transpiled depth,17.0,N/A,17,gates,u/cx basis,Circuit-resource transparency
+Stage 2 exact objective,45.78743946915947,45.78743946915947,45.78743946915947,expected net value,same submitted probabilities,Classical brute-force certificate
+Stage 2 certified hybrid optimality gap,0.0,0.0,0.0,absolute,0 = exact optimum,Feasibility/optimality judging credit
+Stage 2 QAOA feasible sample rate,0.681396484375,N/A,N/A,fraction,higher,Quality of quantum constraint handling
+Stage 2 raw QAOA gap to exact,5.047731581776915,N/A,N/A,expected net value,0 = QAOA sampled optimum,Honest raw quantum gap; hybrid repair closes it
+Stage 2 budget utilization,0.44,N/A,N/A,% of limit,≤1,Operational constraint compliance
+Stage 2 capacity utilization,0.7272727272727273,N/A,N/A,% of limit,≤1,Operational constraint compliance
+Stage 3 exact Pr(K≥3),0.4164131424084104,N/A,N/A,probability,64-outcome Poisson-binomial,Judge's exact reference
+Stage 3 ideal statevector Pr(K≥3),0.4164131424084103,N/A,N/A,probability,exact,Checks RY angles and Qiskit bit ordering
+Stage 3 noiseless finite-shot error,0.003966496263464625,N/A,N/A,absolute,lower,Sampling accuracy
+Stage 3 Monte Carlo error,0.001282527174035375,N/A,N/A,absolute,lower,Independent classical validation
+Stage 3 noisy error,0.014922306810339625,N/A,N/A,absolute,lower,Noise/limitation analysis
+Stage 3 mitigated error,0.004014930859710331,N/A,N/A,absolute,lower than noisy error,Unmitigated vs mitigation evidence
+Stage 3 finite-shot 95% half-width,0.005337600548893514,N/A,N/A,probability,shots=32768,Statistical uncertainty disclosure
+Stage 3 two-qubit + SWAP gates,0.0,N/A,N/A,count,0 expected,Correct independent product-state design
+Expected net value / contact cost,4.162494497196316,N/A,N/A,ratio,higher,Business recommendation quality
+Prototype reproducibility checks passed,100.0,N/A,N/A,%,100,"Seeds, versions, result files, exact references, license"
