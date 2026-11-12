@@ -1,0 +1,170 @@
+[
+  {
+    "file": "00_cover_art",
+    "png": "00_cover_art.png",
+    "svg": "00_cover_art.svg",
+    "title": "Cover artwork",
+    "caption": "Abstract cloud-quantum network and circuit motif used on the submission cover.",
+    "section": "Cover"
+  },
+  {
+    "file": "01_architecture",
+    "png": "01_architecture.png",
+    "svg": "01_architecture.svg",
+    "title": "End-to-end architecture",
+    "caption": "Data, prediction, constrained selection, and quantum simulation form one traceable pipeline.",
+    "section": "Architecture"
+  },
+  {
+    "file": "02_stage1_pipeline",
+    "png": "02_stage1_pipeline.png",
+    "svg": "02_stage1_pipeline.svg",
+    "title": "Stage 1 leakage controls",
+    "caption": "All preprocessing, calibration, and fusion weights are learned from out-of-fold training predictions.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "03_model_scores",
+    "png": "03_model_scores.png",
+    "svg": "03_model_scores.svg",
+    "title": "Model selection scoreboard",
+    "caption": "The 40% XGBoost / 60% quantum-kernel fusion achieved the highest judge-aligned composite.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "04_roc_pr",
+    "png": "04_roc_pr.png",
+    "svg": "04_roc_pr.svg",
+    "title": "Discrimination curves",
+    "caption": "Out-of-fold ROC and precision\u2013recall behaviour on the 300 labelled training customers.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "05_calibration",
+    "png": "05_calibration.png",
+    "svg": "05_calibration.svg",
+    "title": "Probability calibration",
+    "caption": "Reliability curve supports the low Brier score, log loss, and expected calibration error.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "06_fusion_sweep",
+    "png": "06_fusion_sweep.png",
+    "svg": "06_fusion_sweep.svg",
+    "title": "Fusion-weight sensitivity",
+    "caption": "The selected 60% quantum / 40% XGBoost point balances calibration with top-decile ranking.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "07_top10",
+    "png": "07_top10.png",
+    "svg": "07_top10.svg",
+    "title": "Top-10 candidate probabilities",
+    "caption": "Continuous probabilities are preserved and ranked with customer_id tie-breaking.",
+    "section": "Stage 1"
+  },
+  {
+    "file": "08_qubo_penalty",
+    "png": "08_qubo_penalty.png",
+    "svg": "08_qubo_penalty.svg",
+    "title": "Constraint and penalty design",
+    "caption": "The exact-six and one-sided resource constraints are encoded in a diagonal QAOA cost oracle.",
+    "section": "Stage 2"
+  },
+  {
+    "file": "09_qaoa_circuit",
+    "png": "09_qaoa_circuit.png",
+    "svg": "09_qaoa_circuit.svg",
+    "title": "QAOA logical circuit",
+    "caption": "Warm-start RY initialization, two diagonal cost layers, and RX mixers on ten selection qubits.",
+    "section": "Stage 2"
+  },
+  {
+    "file": "10_stage2_landscape",
+    "png": "10_stage2_landscape.png",
+    "svg": "10_stage2_landscape.svg",
+    "title": "Stage 2 objective landscape",
+    "caption": "All feasible six-customer subsets are enumerated; raw QAOA and certified optimum are shown.",
+    "section": "Stage 2"
+  },
+  {
+    "file": "11_stage3_circuit",
+    "png": "11_stage3_circuit.png",
+    "svg": "11_stage3_circuit.svg",
+    "title": "Stage 3 product-state circuit",
+    "caption": "One RY rotation per customer prepares the exact subscription probability on each qubit.",
+    "section": "Stage 3"
+  },
+  {
+    "file": "12_outcome_heatmap",
+    "png": "12_outcome_heatmap.png",
+    "svg": "12_outcome_heatmap.svg",
+    "title": "64-outcome probability map",
+    "caption": "Independent Bernoulli outcomes; the upper-right region corresponds to three or more successes.",
+    "section": "Stage 3"
+  },
+  {
+    "file": "13_stage3_estimates",
+    "png": "13_stage3_estimates.png",
+    "svg": "13_stage3_estimates.svg",
+    "title": "Stage 3 estimate comparison",
+    "caption": "Exact, ideal statevector, finite-shot, Monte Carlo, noisy, and mitigated results agree within reported errors.",
+    "section": "Stage 3"
+  },
+  {
+    "file": "14_noise_response",
+    "png": "14_noise_response.png",
+    "svg": "14_noise_response.svg",
+    "title": "Noise response matrix",
+    "caption": "Tensor-product response of single-qubit depolarizing noise and symmetric readout error.",
+    "section": "Stage 3"
+  },
+  {
+    "file": "15_counts_heatmap",
+    "png": "15_counts_heatmap.png",
+    "svg": "15_counts_heatmap.svg",
+    "title": "Measurement-count distribution",
+    "caption": "The 32,768 noiseless shots populate all 64 outcomes according to the product-state distribution.",
+    "section": "Stage 3"
+  },
+  {
+    "file": "16_error_propagation",
+    "png": "16_error_propagation.png",
+    "svg": "16_error_propagation.svg",
+    "title": "Error propagation",
+    "caption": "Probability uncertainty is carried into optimization and the final conversion estimate.",
+    "section": "Integration"
+  },
+  {
+    "file": "17_rubric",
+    "png": "17_rubric.png",
+    "svg": "17_rubric.svg",
+    "title": "Judge rubric readiness",
+    "caption": "Rubric-aligned estimate based on quantum depth, exact references, reproducibility, and communication.",
+    "section": "Judging"
+  },
+  {
+    "file": "18_business_dashboard",
+    "png": "18_business_dashboard.png",
+    "svg": "18_business_dashboard.svg",
+    "title": "Business impact dashboard",
+    "caption": "Operational and financial interpretation of the final Stage 2 and Stage 3 results.",
+    "section": "Business"
+  },
+  {
+    "file": "19_reproducibility",
+    "png": "19_reproducibility.png",
+    "svg": "19_reproducibility.svg",
+    "title": "Reproducibility map",
+    "caption": "One runnable pipeline connects pinned inputs to every root-level deliverable and reference result.",
+    "section": "Reproducibility"
+  },
+  {
+    "file": "20_timeline",
+    "png": "20_timeline.png",
+    "svg": "20_timeline.svg",
+    "title": "Submission timeline",
+    "caption": "The final package consolidates code, result files, diagrams, and narrative into a judge-ready submission.",
+    "section": "Submission"
+  }
+]
