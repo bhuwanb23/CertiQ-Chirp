@@ -260,8 +260,8 @@ def generate_report(project_root=None):
     lines.append("```")
 
     report_text = "\n".join(lines) + "\n"
-    (RES / "benchmark_report.md").write_text(report_text)
-    (ROOT / "docs" / "04_TECHNICAL_REPORT.md").write_text(report_text)
+    (RES / "benchmark_report.md").write_text(report_text, encoding="utf-8")
+    (ROOT / "docs" / "04_TECHNICAL_REPORT.md").write_text(report_text, encoding="utf-8")
 
     readme = f"""# CertiQ-Chirp benchmark
 
@@ -291,7 +291,7 @@ def generate_report(project_root=None):
 
     The supplied workbook is `data/raw/bank_campaign_participant_release.xlsx`; pinned runtime dependencies are in `requirements.txt`, and random seeds are recorded in `seeds.json`. Repository architecture and the full reproduction guide are in the root `README.md`.
     """.replace("\n    ", "\n").lstrip()
-    (ROOT / "docs" / "BENCHMARK_README.md").write_text(readme)
+    (ROOT / "docs" / "BENCHMARK_README.md").write_text(readme, encoding="utf-8")
     print("Wrote benchmark report, docs/04_TECHNICAL_REPORT.md, and docs/BENCHMARK_README.md")
 
     return RES / "benchmark_report.md"

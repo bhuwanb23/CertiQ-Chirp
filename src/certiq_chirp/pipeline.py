@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """End-to-end orchestration for the CertiQ-Chirp benchmark."""
 import argparse
 import os
@@ -141,7 +141,7 @@ def main(argv=None):
     stage2["qaoa"] = qaoa
     stage2["certified_hybrid_selected_ids"] = list(exact_ids)
     stage2["devpost_form_selected_ids"] = ", ".join(stage2["selected_6_customer_ids"])
-    (OUT / "stage2_selection.json").write_text(json.dumps(native(stage2), indent=2))
+    (OUT / "stage2_selection.json").write_text(json.dumps(native(stage2), indent=2), encoding="utf-8")
 
     # Stage 3.
     selected_order = top10.iloc[exact_combo].sort_values(["predicted_probability", "customer_id"], ascending=[False, True]).reset_index(drop=True)
@@ -156,7 +156,7 @@ def main(argv=None):
         "Qiskit Aer noiseless finite-shot estimate; exact analytical reference is "
         f"{stage3['exact_analytical_probability']}."
     )
-    (OUT / "stage3_simulation.json").write_text(json.dumps(native(stage3), indent=2))
+    (OUT / "stage3_simulation.json").write_text(json.dumps(native(stage3), indent=2), encoding="utf-8")
 
     # Business and reproducibility values.
     expected_conversions = float(ps.sum())
@@ -244,7 +244,7 @@ def main(argv=None):
         "seeds": SEEDS,
         "versions": versions,
     }
-    (OUT / "benchmark_summary.json").write_text(json.dumps(native(summary), indent=2))
+    (OUT / "benchmark_summary.json").write_text(json.dumps(native(summary), indent=2), encoding="utf-8")
 
     # 30 core benchmark metrics, with comparisons where meaningful.
     def v(d, *keys):
@@ -265,7 +265,7 @@ def main(argv=None):
     add("Stage 1 calibration slope", wm["calibration_slope"], cm["calibration_slope"], qm["calibration_slope"], "ratio", "near 1", "Whether probabilities are too extreme or too flat")
     add("Stage 1 Precision@10% (OOF)", wm["precision_at_10pct"], cm["precision_at_10pct"], qm["precision_at_10pct"], "score", "higher", "Proxy for hidden-test Precision@10")
     add("Stage 1 Recall@10% (OOF)", wm["recall_at_10pct"], cm["recall_at_10pct"], qm["recall_at_10pct"], "score", "higher", "Proxy for hidden-test Recall@10")
-    add("Stage 1 lift@10% (OOF)", wm["lift_at_10pct"], cm["lift_at_10pct"], qm["lift_at_10pct"], "×", "higher; 1 = random", "Business value of the top decile")
+    add("Stage 1 lift@10% (OOF)", wm["lift_at_10pct"], cm["lift_at_10pct"], qm["lift_at_10pct"], "Ã—", "higher; 1 = random", "Business value of the top decile")
     add("Stage 1 NDCG@10% (OOF)", wm["ndcg_at_10pct"], cm["ndcg_at_10pct"], qm["ndcg_at_10pct"], "score", "higher", "Ranking quality with position weighting")
     add("Stage 1 PR-AUC bootstrap CI width", boot_width, "not scored", "not scored", "score", "narrower", "Sampling stability of the minority-class metric")
     add("Stage 1 CV PR-AUC std", summary["stage1_stability"]["winner_repeat_pr_auc_std"], float(np.std(repeat_pr[best_classical])), float(np.std(repeat_pr[quantum_only])), "score", "lower", "Robustness to CV partition")
@@ -275,10 +275,10 @@ def main(argv=None):
     add("Stage 2 certified hybrid optimality gap", qaoa["certified_hybrid_gap"], 0.0, 0.0, "absolute", "0 = exact optimum", "Feasibility/optimality judging credit")
     add("Stage 2 QAOA feasible sample rate", qaoa["feasible_sample_rate"], "N/A", "N/A", "fraction", "higher", "Quality of quantum constraint handling")
     add("Stage 2 raw QAOA gap to exact", qaoa["qaoa_gap_to_exact"], "N/A", "N/A", "expected net value", "0 = QAOA sampled optimum", "Honest raw quantum gap; hybrid repair closes it")
-    add("Stage 2 budget utilization", stage2["budget_utilization"], "N/A", "N/A", "% of limit", "≤1", "Operational constraint compliance")
-    add("Stage 2 capacity utilization", stage2["capacity_utilization"], "N/A", "N/A", "% of limit", "≤1", "Operational constraint compliance")
-    add("Stage 3 exact Pr(K≥3)", stage3["exact_analytical_probability"], "N/A", "N/A", "probability", "64-outcome Poisson-binomial", "Judge's exact reference")
-    add("Stage 3 ideal statevector Pr(K≥3)", stage3["ideal_statevector_probability"], "N/A", "N/A", "probability", "exact", "Checks RY angles and Qiskit bit ordering")
+    add("Stage 2 budget utilization", stage2["budget_utilization"], "N/A", "N/A", "% of limit", "â‰¤1", "Operational constraint compliance")
+    add("Stage 2 capacity utilization", stage2["capacity_utilization"], "N/A", "N/A", "% of limit", "â‰¤1", "Operational constraint compliance")
+    add("Stage 3 exact Pr(Kâ‰¥3)", stage3["exact_analytical_probability"], "N/A", "N/A", "probability", "64-outcome Poisson-binomial", "Judge's exact reference")
+    add("Stage 3 ideal statevector Pr(Kâ‰¥3)", stage3["ideal_statevector_probability"], "N/A", "N/A", "probability", "exact", "Checks RY angles and Qiskit bit ordering")
     add("Stage 3 noiseless finite-shot error", stage3["errors"]["finite_shot_vs_exact"], "N/A", "N/A", "absolute", "lower", "Sampling accuracy")
     add("Stage 3 Monte Carlo error", stage3["errors"]["monte_carlo_vs_exact"], "N/A", "N/A", "absolute", "lower", "Independent classical validation")
     add("Stage 3 noisy error", stage3["errors"]["noisy_vs_exact"], "N/A", "N/A", "absolute", "lower", "Noise/limitation analysis")

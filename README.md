@@ -104,6 +104,7 @@ Random seeds and pinned libraries stabilize the model and simulation artifacts. 
 
 ```text
 CertiQ-Chirp/
+├── atomiq_analysis/                    # analysis workspace: source, media gallery, PDFs, bundles, prototype, docs, archives
 ├── .github/workflows/tests.yml       # GitHub Actions test job
 ├── data/
 │   ├── raw/                           # supplied participant workbook
